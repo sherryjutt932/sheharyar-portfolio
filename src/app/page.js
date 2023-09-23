@@ -4,8 +4,8 @@ import Image from "next/image";
 import styles from "./page.module.scss";
 import React from "react";
 import { useRef, useLayoutEffect, useEffect, useState } from "react";
-// import { gsap } from "gsap";
-// import Lenis from "@studio-freight/lenis";
+import { gsap } from "gsap";
+import Lenis from "@studio-freight/lenis";
 
 import Loader from "../components/Loader";
 import Hero from "../components/Hero";
@@ -33,15 +33,15 @@ export default function Home() {
   //   return () => context.revert();
   // }, []);
 
-  // const lenis = new Lenis();
-  // useEffect(() => {
-  //   function raf(time) {
-  //     lenis.raf(time);
-  //     requestAnimationFrame(raf);
-  //   }
+  useEffect(() => {
+    const lenis = new Lenis();
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
 
-  //   requestAnimationFrame(raf);
-  // }, []);
+    requestAnimationFrame(raf);
+  }, []);
 
   return (
     // <>

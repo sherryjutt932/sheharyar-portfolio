@@ -1,8 +1,5 @@
-"use client";
-
 import './globals.css'
 import { Inter, Poppins } from 'next/font/google'
-import { ReactLenis, useLenis } from '@studio-freight/react-lenis'
 
 const inter = Inter({ subsets: ['latin'] })
 const poppins = Poppins({
@@ -16,15 +13,9 @@ export const metadata = {
 }
 
 export default function RootLayout({ children }) {
-  const lenis = useLenis(({ scroll }) => {
-    // called every scroll
-  })
   return (
-    <ReactLenis root>
-     <html lang="en">
+    <html lang="en">
       <body className={poppins.className}>{children}</body>
     </html>
-  </ReactLenis>
-   
   )
 }
