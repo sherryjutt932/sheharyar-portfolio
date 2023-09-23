@@ -23,16 +23,16 @@ export default function Home() {
   const [timeline, setTimeline] = useState(null);
   const main = useRef();
 
-  // useLayoutEffect(() => {
-  //   const context = gsap.context(() => {
-  //     const tl = gsap.timeline({
-  //       onComplete: () => setLoaderFinished(true),
-  //     });
-  //     setTimeline(tl);
-  //   });
+  useLayoutEffect(() => {
+    const context = gsap.context(() => {
+      const tl = gsap.timeline({
+        onComplete: () => setLoaderFinished(true),
+      });
+      setTimeline(tl);
+    });
 
-  //   return () => context.revert();
-  // }, []);
+    return () => context.revert();
+  }, []);
 
   useEffect(() => {
     const lenis = new Lenis();
@@ -45,23 +45,23 @@ export default function Home() {
   }, []);
 
   return (
-    // <>
-    //   {loaderFinished ? (
-    //     <main ref={main} className="main">
-    //       <Hero />
-    //       <Projects />
-    //       <Achivements />
-    //     </main>
-    //   ) : (
-    //     <main ref={main} className="main">
-    //       <Loader timeline={timeline} />
-    //     </main>
-    //   )}
-    // </>
-    <main ref={main} className="main">
-      <Hero />
-      <Projects />
-      <Achivements />
-    </main>
+    <>
+      {loaderFinished ? (
+        <main ref={main} className="main">
+          <Hero />
+          <Projects />
+          <Achivements />
+        </main>
+      ) : (
+        <main ref={main} className="main">
+          <Loader timeline={timeline} />
+        </main>
+      )}
+    </>
+    // <main ref={main} className="main">
+    //   <Hero />
+    //   <Projects />
+    //   <Achivements />
+    // </main>
   );
 }

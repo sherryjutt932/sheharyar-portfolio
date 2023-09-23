@@ -108,7 +108,7 @@ export default function index() {
 
       <div>
         <div className={styles.blobS}></div>
-        {/* <Blob/> */}
+        <Blob/>
       </div>
     </section>
   );
