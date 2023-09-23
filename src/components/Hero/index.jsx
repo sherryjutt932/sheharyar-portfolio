@@ -91,7 +91,7 @@ export default function index() {
         </ul>
 
 
-        <div class={styles.resume}>
+        <div className={styles.resume}>
         <button>
         <span >
         <HiDownload/> 
