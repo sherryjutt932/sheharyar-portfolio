@@ -2,7 +2,7 @@
 "use client";
 import {useEffect, useRef } from "react";
 import styles from "./style.module.scss";
-import { GiNinjaStar } from "react-icons/Gi";
+import { GiNinjaStar } from "react-icons/gi";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
