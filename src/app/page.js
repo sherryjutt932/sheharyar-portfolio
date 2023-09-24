@@ -14,6 +14,7 @@ import Achivements from "@/components/Achivements";
 import Projects from "@/components/Projects";
 import Marque from "@/components/Marque";
 import Education from "@/components/Education";
+import Skills from "@/components/Skills";
 
 // const Hero = dynamic(() => import("@/components/Hero"), {});
 // const Achivements = dynamic(() => import("@/components/Achivements"), {});
@@ -49,28 +50,29 @@ export default function Home() {
   }, []);
 
   return (
-    <>
-      {loaderFinished ? (
-        <main ref={main} className="main">
-          <Hero />
-          <Projects />
-          <Education />
-          <Marque text="Achivements" />
-          <Achivements />
-        </main>
-      ) : (
-        <main ref={main} className="main">
-          <Loader timeline={timeline} />
-        </main>
-      )}
-    </>
+    // <>
+    //   {loaderFinished ? (
+    //     <main ref={main} className="main">
+    //       <Hero />
+    //       <Projects />
+    //       <Education />
+    //       <Marque text="Achivements" />
+    //       <Achivements />
+    //     </main>
+    //   ) : (
+    //     <main ref={main} className="main">
+    //       <Loader timeline={timeline} />
+    //     </main>
+    //   )}
+    // </>
     
-    // <main ref={main} className="main">
-    //   {/* <Hero />
-    //   <Projects /> */}
-    //   <Education />
-    //   <Marque text="Achivements" />
-    //   <Achivements />
-    // </main>
+    <main ref={main} className="main">
+      <Hero />
+      <Projects />
+      <Education />
+      <Skills />
+      <Marque text="Achivements" />
+      <Achivements />
+    </main>
   );
 }

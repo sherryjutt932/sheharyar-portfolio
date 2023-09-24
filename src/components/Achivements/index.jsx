@@ -7,30 +7,36 @@ import Descriptions from './Descriptions.jsx';
 
 const data = [
     {
-        title: "Ford",
+        title: "Google",
+        title2: "#HashCode",
         description: "Working on the Next-Generation HMI Experience without no driving experience.",
         speed: 0.5
     },
     {
-        title: "UFC",
+        title: "PSEB",
+        title2: "MERN Stack",
         description: "Developed the Future of UFC Sports Ecosystem despite not being a sports fan.",
         speed: 0.5
     },
     {
-        title: "Lincoln",
+        title: "General Secretory",
+        title2: "Programming Buddies",
         description: "Defined the visual concept and design language for the Lincoln Zephyr 2022 but never seen it in real life.",
         speed: 0.67
     },
     {
-        title: "Royal",
+        title: "Coursera",
+        title2: "AWS Cloud",
         description: "I was just one person on a massive team that created an entire Royal Caribbean eco-system.",
         speed: 0.8
     },
     {
-        title: "NFL",
-        description: "Explored the Future of Fantasy Football while being in a country where football means a total different sport.",
+        title: "Graphic",
+        title2: "Designing Course",
+        description: "I was just one person on a massive team that created an entire Royal Caribbean eco-system.",
         speed: 0.8
-    }
+    },
+    
 ]
 
 export default function Projects() {

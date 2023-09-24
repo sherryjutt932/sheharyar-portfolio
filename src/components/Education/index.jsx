@@ -47,7 +47,7 @@ export default function Education(props) {
   ];
 
   useEffect(() => {
-    gsap.set(wrap.current.children, { x: 200, opacity:0, });
+    gsap.set(wrap.current.children, { x: 100, opacity:0, });
 
     var tl = gsap.timeline();
     tl.to(wrap.current.children[0], {

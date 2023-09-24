@@ -11,7 +11,7 @@ export default function index({data, selectedProject}) {
         <div className={styles.descriptions}>
             {
                 data.map( (project, i) => {
-                    const { title, description } = project;
+                    const { title2, description } = project;
                     return (
                     <div 
                         key={i} 
@@ -21,7 +21,7 @@ export default function index({data, selectedProject}) {
                         <p className={styles.num}>[0{i}]</p>
                         <div
                         className={styles.wrapper}>
-                            <p>{crop(title, 9)}</p>
+                            <p>{title2}</p>
                             <p>{description}</p>
                         </div>
                     </div>
