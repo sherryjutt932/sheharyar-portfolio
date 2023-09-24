@@ -18,8 +18,12 @@ export default function index({data, selectedProject}) {
                         className={styles.description}
                         style={{clipPath: selectedProject == i ? "inset(0 0 0)" : "inset(50% 0 50%"}}
                     >
-                        <p>{crop(title, 9)}</p>
-                        <p>{description}</p>
+                        <p className={styles.num}>[0{i}]</p>
+                        <div
+                        className={styles.wrapper}>
+                            <p>{crop(title, 9)}</p>
+                            <p>{description}</p>
+                        </div>
                     </div>
                     )
                 })

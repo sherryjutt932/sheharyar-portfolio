@@ -18,7 +18,8 @@
   --BR: 6px;
 
   --dark1:#000;
-  --dark2:#121212;
+  --dark2:#090909;
+  --dark3:#333;
 
   --gray-100: hsla(0,0%,95%,1);
   --gray-200: hsla(0,0%,92%,1);
@@ -33,13 +34,16 @@
 
   
   --light1:#fff;
-  --light2:#fcfcfc;
+  --light2:#d9dcdf;
   
   --colorMain: #ec4e39;
+  /* --colorMain: #d5ff3f; */
+
   --colorMainD: #a42918;
   --colorMainL: #ff7b6a;
   
-  --colorSecondary: #b7ab98;
+  /* --colorSecondary: #b7ab98; */
+  --colorSecondary: #fcfcfc;
   --colorSecondaryD: #a2947d;
 
   --mainFont: "ClashDisplay-Bold";
@@ -49,7 +53,10 @@
 body{
   margin: 0px;
   background-color: #000;
+  overflow-x: hidden;
+  width: 100vw;
 }
+
 /* 
 body::-webkit-scrollbar {
   display: none;

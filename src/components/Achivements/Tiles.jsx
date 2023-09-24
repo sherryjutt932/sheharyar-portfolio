@@ -30,6 +30,7 @@ function Title({data, setSelectedProject}) {
     
     return (
         <div ref={container} className={styles.title}>
+            <p className={styles.num}>[0{i}]</p>
             <div 
                 className={styles.wrapper}
                 onMouseOver={() => {setSelectedProject(i)}}

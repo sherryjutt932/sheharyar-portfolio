@@ -28,7 +28,7 @@ export default function Name() {
     tl.to(wrapper.current.children, {
       y: 0,
       duration:2,
-      stagger: 0.05,
+      stagger: 0.1,
       ease: "power3.out", // Easing function (you can choose a different one)
     });
   }, []);

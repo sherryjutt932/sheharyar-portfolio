@@ -26,7 +26,7 @@ export default function index() {
 
     var tl = gsap.timeline();
     tl.to(name.current, {
-      y: 20,
+      y: 0,
       scale: 1.1,
       scrub: 10,
       ease: "power3", // Easing function (you can choose a different one)
@@ -40,38 +40,40 @@ export default function index() {
       scrub: true,
     });
 
-    gsap.set(intro.current.children, { y: -50, opacity: 0 });
-    gsap.set([intro.current.children[2], intro.current.children[3]], { y: 50, opacity: 0 });
+    gsap.set(intro.current.children, { y: -100, opacity: 0 });
+    gsap.set([intro.current.children[1], intro.current.children[2]], { y: 100, opacity: 0 });
 
     var introtl = gsap.timeline();
     introtl.to(intro.current.children, {
       y: 0,
       opacity: 1,
       duration: 2,
-      stagger: 0,
       ease: "power3", // Easing function (you can choose a different one)
     });
   }, []);
 
   return (
-    <section ref={section} className={styles.Hero}>
-      <div ref={intro}>
+    <section ref={section}  className={styles.Hero}>
+      <div ref={intro} style={{zIndex: 3}}>
+        <nav>
         <div className={styles.logo}>SS</div>
 
-        <div className={styles.nav}>
-          <div>
-            {" "}
-            <Link href="#">ABOUT</Link>
-          </div>
-          <div>
-            {" "}
-            <Link href="#">WORK</Link>
-          </div>
-          <div>
-            {" "}
-            <Link href="#">CONTACT</Link>
-          </div>
-        </div>
+<div className={styles.nav}>
+  <div>
+    {" "}
+    <Link href="#">ABOUT</Link>
+  </div>
+  <div>
+    {" "}
+    <Link href="#">WORK</Link>
+  </div>
+  <div>
+    {" "}
+    <Link href="#">CONTACT</Link>
+  </div>
+</div>
+        </nav>
+
         <ul className={styles.SocialIcons}>
           <li className={styles.Icon}>
             <StickyIcon icon={<BiLogoLinkedin/>}/>
@@ -102,11 +104,11 @@ export default function index() {
 
       </div>
 
-      <div ref={name} className={styles.Name}>
+      <div ref={name} style={{zIndex: 2}} className={styles.Name}>
         <Name />
       </div>
 
-      <div>
+      <div style={{zIndex: 1}}>
         <div className={styles.blobS}></div>
         <Blob/>
       </div>
