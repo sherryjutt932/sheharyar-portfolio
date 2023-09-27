@@ -1,12 +1,15 @@
 .container {
   width: 100%;
+  overflow-x: hidden;
   background-color: var(--dark1);
   color: var(--light1);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  align-items: center;
   overflow-y: hidden;
   position: relative;
+  border-top: 1px solid var(--colorMain);
 
   .blobS {
     position: absolute;
@@ -52,12 +55,12 @@
     }
   }
   .wrapper {
-    width: 100%;
+    width: 80%;
     flex: 1;
     display: flex;
     align-items: flex-end;
-    justify-content: center;
-    gap: var(--MPad);
+    justify-content: space-between;
+    gap:2px;
     .spacer{
       width: 100px;
     }

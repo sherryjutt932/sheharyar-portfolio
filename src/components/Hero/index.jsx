@@ -5,11 +5,14 @@ import dynamic from "next/dynamic";
 import Name from "./Name.jsx";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-gsap.registerPlugin(ScrollTrigger);
+import Logo from "../../assets/images/SSWhite.svg"
 
 import {HiDownload} from 'react-icons/hi';
 import {BiLogoLinkedin,BiLogoGithub,BiLogoCodepen,BiLogoInstagram,BiLogoFacebook} from 'react-icons/bi';
 import StickyIcon from './StickyIcon.jsx'
+import Image from "next/image";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const Blob = dynamic(() => import("../Blob"), {
   ssr: true,
@@ -27,7 +30,7 @@ export default function index() {
     var tl = gsap.timeline();
     tl.to(name.current, {
       y: 0,
-      scale: 1.1,
+      scale: 1.3,
       scrub: 10,
       ease: "power3", // Easing function (you can choose a different one)
     });
@@ -56,7 +59,9 @@ export default function index() {
     <section ref={section}  className={styles.Hero}>
       <div ref={intro} style={{zIndex: 3}}>
         <nav>
-        <div className={styles.logo}>SS</div>
+        <div className={styles.logo}>
+          <Image src={Logo} width={54} height={54}/>
+          </div>
 
 <div className={styles.nav}>
   <div>

@@ -17,7 +17,6 @@
     cursor: default;
     position: relative;
     z-index: 2;
-    padding: var(--SPad);
     padding-left: var(--BPad);
     display: flex;
 
@@ -26,7 +25,8 @@
     }
 
     .num {
-      padding: var(--Pad);
+      padding: var(--SPad) 0;
+      
       display: inline-block;
       color: var(--colorMain);
       opacity: 0.7;
@@ -42,12 +42,13 @@
         font-family: var(--mainFontSB);
         text-transform: uppercase;
         font-weight: 700;
-        padding: 0;
         margin: 0;
         font-size: 5rem;
         line-height: 100%;
         position: relative;
         z-index: 2;
+        padding: var(--SPad) 0;
+
 
         &:nth-of-type(2) {
           display: block;
@@ -70,6 +71,18 @@
   z-index: 2;
   pointer-events: none;
 
+  .descImg{
+    position: absolute;
+    object-fit: cover;
+    width: auto;
+    height: auto;
+    max-width: 50vw;
+    max-height: 60vh;
+    z-index: 10;
+    transition: transform 0.3s ease-in;
+    border-radius: 5px;
+  }
+
   .description {
     background-color: var(--dark2);
     color: var(--light1);
@@ -78,7 +91,6 @@
     cursor: default;
     position: relative;
     z-index: 2;
-    padding: var(--SPad);
     padding-left: var(--BPad);
     clip-path: inset(50% 0 50%);
     transition: clip-path 0.4s;
@@ -88,7 +100,7 @@
     }
 
     .num {
-      padding: var(--Pad);
+      padding: var(--SPad) 0;
       display: inline-block;
       font-size: 0.9rem;
       color: var(--colorMain);
@@ -96,7 +108,6 @@
 
     .wrapper {
       display: inline-block;
-      padding: 0 var(--BPad);
       display: flex;
       width: 100%;
       justify-content: space-between;
@@ -104,23 +115,26 @@
 
       p {
         display: inline-block;
-        padding: 0;
         margin: 0;
         position: relative;
         z-index: 2;
 
         &:nth-of-type(1) {
           font-weight: 700;
+          padding: var(--SPad) 0;
+          padding-left: var(--BPad);
           font-size: 3rem;
           line-height: 5rem;
           text-transform: uppercase;
           font-family: var(--mainFontSB);
           color: var(--colorMain);
+          white-space: nowrap;
         }
 
         &:nth-of-type(2) {
           width: 40%;
           font-size: 0.9rem;
+          padding-right: var(--BPad);
         }
       }
     }

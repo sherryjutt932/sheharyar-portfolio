@@ -33,7 +33,7 @@ export default function Marque(props) {
         {[...Array(4)].map((_, i) => (
           <span key={i}>
             <p>{props.text}</p>
-            <Icon wrp={wrap.current}/>
+            <Icon wrp={wrap}/>
           </span>
         ))}
       </div>

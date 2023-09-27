@@ -14,6 +14,7 @@ export default function index() {
   const photo = useRef(null);
 
   useEffect(() => {
+
     ScrollTrigger.create({
       trigger: gallery.current,
       start: "top top",
@@ -22,49 +23,77 @@ export default function index() {
       animation: photoAnm(photo),
       scrub: true,
     });
-
-    ScrollTrigger.create({
-      trigger: left.current,
-      start: "top top",
-      end: "bottom bottom",
-      pin: left.current,
-      animation: detailAnm(details),
-      scrub: true,
-    });
-
     
+    // ScrollTrigger.create({
+    //   trigger: left.current,
+    //   start: "top top",
+    //   end: "bottom bottom",
+    //   pin: left.current,
+    //   animation: detailAnm(details),
+    //   scrub: true,
+    // });
+
   }, []);
+
+  
+  const projects = [
+    {
+      title: "Forensic Analysis",
+      description: "Create frontend and ML model to show result of Forensic Analysis with great accuracy.",
+      year: "2023",
+      tasks: ["API fetching","ML Model","Live prediction", "Authentication"],
+      skills: ["html","css","js","react","python"]
+    },
+    {
+      title: "Account Management System",
+      description: "Developed and Design Detailed Account Management System for Global Soft ERP which include Ledgers, Reports, Accounts and much more.",
+      year: "2023",
+      tasks: ["API fetching","ML Model","Live prediction", "Authentication"],
+      skills: ["html","css","js","mvc","sql"]
+    },
+    {
+      title: "Mockytails",
+      description: "A playfull and rich in color e-commerce website to sell mocktail cards having childrens as target audience.",
+      year: "2023",
+      tasks: ["API fetching","ML Model","Live prediction", "Authentication"],
+      skills: ["html","css","js"]
+    },
+    {
+      title: "Trading Web UI",
+      description: "Create a UI for trading of stokes, bitcoins and NFTs. Give update on price and value in market.",
+      year: "2022",
+      tasks: ["API fetching","ML Model","Live prediction", "Authentication"],
+      skills: ["figma","ai"]
+    },
+  ];
 
   return (
     <>
       <div ref={gallery} className={styles.gallery}>
         <div ref={left} className={styles.left}>
           <div className={styles.Heading}>
-            <span></span>projects
+            <h1>
+              projects <span>.</span>
+            </h1>
           </div>
           <div ref={details} className={styles.detailsWrapper}>
-            <Detail
-              head="Forensic Analysis"
-              text=" Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo architecto, voluptatibus facere cupiditate amet, sequi corporis ad, debitis beatae deleniti minus quam officiis laborum necessitatibus id quibusdam inventore consequuntur exercitationem."
-            />
+  
+            {projects.map((item, i) => (
+                      <Detail key={i} data={item}
+                    />
+                    ))}
 
-            <Detail
-              head="Vertiment E-Commerce"
-              text=" Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo architecto, voluptatibus facere cupiditate amet, sequi corporis ad, debitis beatae deleniti minus quam officiis laborum necessitatibus id quibusdam inventore consequuntur exercitationem."
-            />
-
-            <Detail
-              head="Account Management System"
-              text=" Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo architecto, voluptatibus facere cupiditate amet, sequi corporis ad, debitis beatae deleniti minus quam officiis laborum necessitatibus id quibusdam inventore consequuntur exercitationem."
-            />
           </div>
         </div>
 
         <div ref={right} className={styles.right}>
+      <div className={styles.blobS}></div>
+
           <div ref={photo} className={styles.photos}>
-            <div className={styles.photo}></div>
-            <div className={styles.photo}></div>
-            <div className={styles.photo}></div>
+          {projects.map((item, i) => (
+                      <div data-num={i} className={styles.photo}></div>
+                    ))}
+            
           </div>
         </div>
       </div>

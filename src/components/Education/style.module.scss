@@ -30,6 +30,7 @@
     align-items: flex-end;
     flex-direction: column;
     gap: 3rem;
+    padding-bottom: var(--BPad);
     .Degree {
       width: 80%;
       border-top: 1px dashed var(--dark3);

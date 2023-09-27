@@ -20,8 +20,8 @@ export default function Icon(props) {
       });
   
       ScrollTrigger.create({
-        trigger: props.wrp,
-        start: "top top",
+        trigger: props.wrp.current,
+        start: "top bottom",
         end: "bottom top",
         animation: tl,
         scrub: true,

@@ -1,20 +1,7 @@
-"use client";
-
-import Image from "next/image";
-import styles from "./page.module.scss";
 import React from "react";
-import dynamic from "next/dynamic";
-import { useRef, useLayoutEffect, useEffect, useState } from "react";
-import { gsap } from "gsap";
-import Lenis from "@studio-freight/lenis";
-
-import Loader from "@/components/Loader";
-import Hero from "@/components/Hero";
-import Achivements from "@/components/Achivements";
-import Projects from "@/components/Projects";
-import Marque from "@/components/Marque";
-import Education from "@/components/Education";
-import Skills from "@/components/Skills";
+import App from "./App.jsx";
+import Head from "next/head.js";
+import favicon from "./favicon.ico"
 
 // const Hero = dynamic(() => import("@/components/Hero"), {});
 // const Achivements = dynamic(() => import("@/components/Achivements"), {});
@@ -22,57 +9,28 @@ import Skills from "@/components/Skills";
 // const Marque = dynamic(() => import("@/components/Marque"), {});
 // const Education = dynamic(() => import("@/components/Education"), {});
 
+export const metadata = {
+  title: 'Sheharyar Saeed | Portfolio',
+  description: 'Sheharyar Saeed web developer portfolio in NextJS',
+  keywords: 'HTML, CSS, JavaScript, NextJS',
+  author: 'Sheharyar Saeed',
+};
 
 export default function Home() {
-  const [loaderFinished, setLoaderFinished] = useState(false);
-  const [timeline, setTimeline] = useState(null);
-  const main = useRef();
-
-  useLayoutEffect(() => {
-    const context = gsap.context(() => {
-      const tl = gsap.timeline({
-        onComplete: () => setLoaderFinished(true),
-      });
-      setTimeline(tl);
-    });
-
-    return () => context.revert();
-  }, []);
-
-  useEffect(() => {
-    const lenis = new Lenis();
-    function raf(time) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
-
-    requestAnimationFrame(raf);
-  }, []);
-
+  
   return (
-    // <>
-    //   {loaderFinished ? (
-    //     <main ref={main} className="main">
-    //       <Hero />
-    //       <Projects />
-    //       <Education />
-    //       <Marque text="Achivements" />
-    //       <Achivements />
-    //     </main>
-    //   ) : (
-    //     <main ref={main} className="main">
-    //       <Loader timeline={timeline} />
-    //     </main>
-    //   )}
-    // </>
-    
-    <main ref={main} className="main">
-      <Hero />
-      <Projects />
-      <Education />
-      <Skills />
-      <Marque text="Achivements" />
-      <Achivements />
+    <main className="main">
+      <Head>
+      <title>{metadata.title}</title>
+        <meta name="description" content={metadata.description} />
+        <meta name="keywords" content={metadata.keywords} />
+        <meta name="author" content={metadata.author} />
+          <link rel="shortcut icon" href = {favicon} />
+          <link rel="apple-touch-icon" sizes="180x180" href = {favicon}/>
+          <link rel="icon" type="image/png" sizes="32x32" href = {favicon}/>
+          <link rel="icon" type="image/png" sizes="16x16" href = {favicon}/>
+      </Head>
+      <App/>
     </main>
   );
 }

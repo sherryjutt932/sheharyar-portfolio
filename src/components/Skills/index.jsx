@@ -28,8 +28,10 @@ export default function Skills() {
   useEffect(() => {
     gsap.defaults({ ease: "power3" });
     var tl = gsap.timeline();
-    tl.from(head.current, {
+    tl.fromTo(head.current, {
       y: -400,
+    }, {
+      y: 50,
     },"a")
     .from([wrap.current.children[0],wrap.current.children[7]], {
       y: 500,
@@ -48,7 +50,7 @@ export default function Skills() {
     ScrollTrigger.create({
       trigger: cont.current,
       start: "top bottom",
-      end: "bottom center",
+      end: "bottom bottom",
       animation: tl,
       scrub: true,
     });

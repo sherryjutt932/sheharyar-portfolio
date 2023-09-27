@@ -9,31 +9,36 @@ const data = [
     {
         title: "Google",
         title2: "#HashCode",
-        description: "Working on the Next-Generation HMI Experience without no driving experience.",
+        description: "Got certificate for achieving high point during hash code coding competition 2022.",
+        img:"Google-HashCode.jpg",
         speed: 0.5
     },
     {
         title: "PSEB",
         title2: "MERN Stack",
-        description: "Developed the Future of UFC Sports Ecosystem despite not being a sports fan.",
+        description: "Advanced MERN Stack course, endorsed by Pakistan Software Export Board (PSEB).",
+        img:"PSEB-MERN.jpeg",
         speed: 0.5
     },
     {
-        title: "General Secretory",
+        title: "G Secretory",
         title2: "Programming Buddies",
-        description: "Defined the visual concept and design language for the Lincoln Zephyr 2022 but never seen it in real life.",
+        description: "Got the chance to become general secretory of a coding society in my university.",
+        img:"programming-buddies.jpg",
         speed: 0.67
     },
     {
         title: "Coursera",
         title2: "AWS Cloud",
-        description: "I was just one person on a massive team that created an entire Royal Caribbean eco-system.",
+        description: "AWS Cloud Solutions Architect certification which contains 4 module from Coursera.",
+        img:"AWS.jpeg",
         speed: 0.8
     },
     {
         title: "Graphic",
         title2: "Designing Course",
         description: "I was just one person on a massive team that created an entire Royal Caribbean eco-system.",
+        img:"graphic.png",
         speed: 0.8
     },
     
