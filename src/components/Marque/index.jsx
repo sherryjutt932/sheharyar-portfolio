@@ -14,7 +14,7 @@ export default function Marque(props) {
 
     var tl = gsap.timeline();
     tl.to(wrap.current, {
-      x: -200,
+      x: -1200,
       ease: "ease", // Easing function (you can choose a different one)
     });
 

@@ -4,10 +4,6 @@ import Head from "next/head.js";
 import favicon from "./favicon.ico"
 
 // const Hero = dynamic(() => import("@/components/Hero"), {});
-// const Achivements = dynamic(() => import("@/components/Achivements"), {});
-// const Projects = dynamic(() => import("@/components/Projects"), {});
-// const Marque = dynamic(() => import("@/components/Marque"), {});
-// const Education = dynamic(() => import("@/components/Education"), {});
 
 export const metadata = {
   title: 'Sheharyar Saeed | Portfolio',

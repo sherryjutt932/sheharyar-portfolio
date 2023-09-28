@@ -17,12 +17,13 @@ export default function index({data, selectedProject}) {
     const handleWindowMouseMove = event => {
     const { innerWidth: width, innerHeight: height } = window;
 
-    if(event.clientY > (innerHeight - (innerHeight/3))){
-        setTrans(25);
+    if(event.clientY > (innerHeight - (innerHeight/10))){
+      setTrans(100);
+  }
+    else if(event.clientY > (innerHeight - (innerHeight/2) + 50)){
+        setTrans(50);
     }
-    if(event.clientY > (innerHeight - 50)){
-        setTrans(60);
-    }
+    else{setTrans(0);}
       setCoords({
         x: event.clientX,
         y: event.clientY
@@ -59,15 +60,19 @@ export default function index({data, selectedProject}) {
                             <p>{description}</p>
                         </div>
                     </div>
-                        {selectedProject == i ? <Image 
+                        {selectedProject == i ? 
+                        <Image 
                         style={{
                             left: `${coords.x}px`,
                             top: `${coords.y}px`,
                             transform: `translateY(-${trans}%)`
                           }}
+                        priority={true}
                         className={styles.descImg} 
                         src={require(`../../assets/images/${img}`).default}
-                        alt="" ></Image> : null}
+                        alt="" ></Image> 
+                        : null
+                        }
                    </>
                     )
                 })
