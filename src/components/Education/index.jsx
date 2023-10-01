@@ -47,25 +47,37 @@ export default function Education(props) {
   ];
 
   useEffect(() => {
-    gsap.set(wrap.current.children, { x: 100, opacity:0, });
-    gsap.defaults({ stagger:0.1 , ease: "power3" });
+    gsap.set(wrap.current.children, { x: 200, opacity:0, });
+
     var tl = gsap.timeline();
-    tl.to(wrap.current.children, {
+    tl.to(wrap.current.children[0], {
       x: 0,
-      stagger:0.1,
       opacity:1,
-    });
+      duration:2,
+      ease: "ease", // Easing function (you can choose a different one)
+    }).to(wrap.current.children[1], {
+      x: 0,
+      opacity:1,
+      duration:2,
+      ease: "ease", // Easing function (you can choose a different one)
+    },">").to(wrap.current.children[2], {
+      x: 0,
+      opacity:1,
+      duration:2,
+      ease: "ease", // Easing function (you can choose a different one)
+    },">");
 
     ScrollTrigger.create({
       trigger: cont.current,
       start: "top 50%",
+      end: "bottom 100%",
       animation: tl,
       scrub: true,
     });
   }, []);
 
   return (
-    <div ref={cont} className={styles.container}>
+    <div ref={cont} id="Education" className={styles.container}>
       <div className={styles.heading}>
         <h1>Education <span>.</span></h1>
         <p className={styles.btnText}>Graduated</p>

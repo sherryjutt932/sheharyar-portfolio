@@ -1,5 +1,5 @@
 
-import React, { useRef } from 'react'
+import React, { useRef, useEffect } from 'react'
 import styles from './style.module.scss';
 import { useScroll, motion, useTransform, useMotionTemplate } from 'framer-motion';
 
@@ -19,6 +19,7 @@ function Title({data, setSelectedProject}) {
 
     const { title, speed, i } = data;
     const container = useRef(null);
+    const tile = useRef(null);
 
     const { scrollYProgress } = useScroll({
         target: container,
@@ -28,13 +29,37 @@ function Title({data, setSelectedProject}) {
     const clipProgress = useTransform(scrollYProgress, [0,1], [100, 0]);
     const clip = useMotionTemplate`inset(0 ${clipProgress}% 0 0)`;
     
+
+    useEffect(() => {
+      const container = tile.current;
+  
+      const handleMouseOver = () => {
+        setSelectedProject(i)
+      };
+  
+      const handleMouseOut = () => {
+        setSelectedProject(null)
+      };
+  
+      if (container) {
+        container.addEventListener('mouseover', handleMouseOver);
+        container.addEventListener('mouseout', handleMouseOut);
+  
+        // Cleanup event listeners on component unmount
+        return () => {
+          container.removeEventListener('mouseover', handleMouseOver);
+          container.removeEventListener('mouseout', handleMouseOut);
+        };
+      }
+    }, []);
+
     return (
         <div ref={container} className={styles.title}>
             <p className={styles.num}>[0{i}]</p>
             <div 
                 className={styles.wrapper}
-                onMouseOver={() => {setSelectedProject(i)}}
-                onMouseLeave={() => {setSelectedProject(null)}}
+                ref={tile}
+                
             >
                 <motion.p style={{clipPath: clip}}>
                     {title}

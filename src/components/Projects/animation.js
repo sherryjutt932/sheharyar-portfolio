@@ -19,6 +19,7 @@ export default function detailAnm(details) {
 
 function photoAnm(photo) {
 
+  // gsap.set(photo.current.children, { opacity: 0},);
     var tl = gsap.timeline();
     tl.to(
       photo.current.children[0],

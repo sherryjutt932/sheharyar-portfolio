@@ -1,5 +1,5 @@
 import styles from "./style.module.scss";
-import { React, useEffect, useRef } from "react";
+import { React, useEffect, useLayoutEffect, useRef } from "react";
 import { gsap } from "gsap";
 
 export default function Name() {
@@ -21,7 +21,7 @@ export default function Name() {
     "d",
   ];
   const wrapper = useRef();
-  useEffect(() => {
+  useLayoutEffect(() => {
     gsap.set(wrapper.current.children, { y: 400 });
 
     var tl = gsap.timeline();

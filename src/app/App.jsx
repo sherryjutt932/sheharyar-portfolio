@@ -10,15 +10,16 @@ import Lenis from "@studio-freight/lenis";
 
 import Loader from "@/components/Loader";
 import Hero from "@/components/Hero";
-// import Achivements from "@/components/Achivements";
-// import Projects from "@/components/Projects";
+import Achivements from "@/components/Achivements";
+import Projects from "@/components/Projects";
 // import Marque from "@/components/Marque";
 // import Education from "@/components/Education";
 // import Skills from "@/components/Skills";
 // import Quote from "@/components/Quote";
+// import Footer from "@/components/Footer";
 
-const Achivements = dynamic(() => import("@/components/Achivements"), {});
-const Projects = dynamic(() => import("@/components/Projects"), {});
+//const Projects = dynamic(() => import("@/components/Projects"), {});
+// const Achivements = dynamic(() => import("@/components/Achivements"), {});
 const Marque = dynamic(() => import("@/components/Marque"), {});
 const Education = dynamic(() => import("@/components/Education"), {});
 const Skills = dynamic(() => import("@/components/Skills"), {});
@@ -67,16 +68,16 @@ export default function App() {
           <Loader timeline={timeline} />
       )} */}
 
-      <Hero />
-      
-      <Projects />
-      <Education />
-      <Quote />
-      <Skills />
-
-      <Marque text="Achivements" />
-      <Achivements />
-      <Footer />
+      <React.StrictMode>
+        <Hero />
+        <Projects />
+        <Education />
+        <Quote />
+        <Skills />
+        <Marque text="Achivements" />
+        <Achivements />
+        <Footer />
+      </React.StrictMode>
     </>
   );
 }

@@ -46,14 +46,14 @@ export default function index({data, selectedProject}) {
                 data.map( (project, i) => {
                     const { title2, description, img } = project;
                     return (
-                   <>
+                   <div key={i} >
                     <div 
-                        key={i} 
+                        
                         // onMouseMove={handleMouseMove}
                         className={styles.description}
                         style={{clipPath: selectedProject == i ? "inset(0 0 0)" : "inset(50% 0 50%"}}
                     >
-                        <p className={styles.num}>[0{i}]</p>
+                        <p className={styles.num}>[0{i+1}]</p>
                         <div
                         className={styles.wrapper}>
                             <p>{title2}</p>
@@ -63,7 +63,7 @@ export default function index({data, selectedProject}) {
                         {selectedProject == i ? 
                         <Image 
                         style={{
-                            left: `${coords.x}px`,
+                            left: `${coords.x+1}px`,
                             top: `${coords.y}px`,
                             transform: `translateY(-${trans}%)`
                           }}
@@ -73,7 +73,7 @@ export default function index({data, selectedProject}) {
                         alt="" ></Image> 
                         : null
                         }
-                   </>
+                   </div>
                     )
                 })
             }

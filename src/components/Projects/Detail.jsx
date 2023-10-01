@@ -1,4 +1,4 @@
-import React, {useRef, useEffect } from "react";
+import React, {useRef, useEffect, useLayoutEffect } from "react";
 import styles from "./style.module.scss";
 import { gsap } from 'gsap';
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -21,7 +21,7 @@ function IconRow(props) {
 
 export default function Detail(props) {
   const det = useRef();
-  useEffect(() => {
+  useLayoutEffect(() => {
     gsap.set(det.current.children, { opacity: 0, y: 40 },);
 
     var tl = gsap.timeline();

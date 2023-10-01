@@ -33,31 +33,39 @@ export default function Skills() {
     }, {
       y: 50,
     },"a")
-    .from([wrap.current.children[0],wrap.current.children[7]], {
-      y: 500,
+    .fromTo([wrap.current.children[0],wrap.current.children[7]], {
+      y: 600,
+    },{
+      y: 0 ,
     },"a")
-    .from([wrap.current.children[1],wrap.current.children[6]], {
-      y: 1500,
-    },"a")
-    .from([wrap.current.children[2],wrap.current.children[5]], {
+    .fromTo([wrap.current.children[1],wrap.current.children[6]], {
       y: 1000,
+    },{
+      y: 0,
     },"a")
-    .from([wrap.current.children[3],wrap.current.children[4]], {
-      y: 700,
+    .fromTo([wrap.current.children[2],wrap.current.children[5]], {
+      y: 600,
+    },{
+      y: 0,
+    },"a")
+    .fromTo([wrap.current.children[3],wrap.current.children[4]], {
+      y: 300,
+    },{
+      y: 0,
     },"a")
     ;
 
     ScrollTrigger.create({
       trigger: cont.current,
-      start: "top bottom",
+      start: "top 60%",
       end: "bottom bottom",
       animation: tl,
-      scrub: true,
+      scrub:1
     });
   }, []);
 
   return (
-    <div ref={cont} className={styles.container}>
+    <div ref={cont} id="Skills" className={styles.container}>
       <div className={styles.blobS}></div>
       <div ref={head} className={styles.heading}>
         <h1>Skills <span>.</span></h1>

@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useLayoutEffect } from "react";
 import styles from "./style.module.scss";
 import Link from "next/link";
 import dynamic from "next/dynamic";
@@ -7,7 +7,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Logo from "../../assets/images/SSWhite.svg";
 import LinkRow from "../LinkRow";
-
+import fileDownload from "js-file-download";
 import { HiDownload } from "react-icons/hi";
 import {
   BiLogoLinkedin,
@@ -32,20 +32,28 @@ export default function index() {
   const intro = useRef();
   const navItems = [
     {
-      name:"About",
-      url:"#"
+      name: "Projects",
+      ref: "Projects",
+      url: "",
     },
     {
-      name:"Work",
-      url:"#"
+      name: "Education",
+      ref: "Education",
+      url: "",
     },
     {
-      name:"Contact",
-      url:"#"
+      name: "Skills",
+      ref: "Skills",
+      url: "",
     },
-  ]
+    {
+      name: "Contact",
+      ref: "Contact",
+      url: "",
+    },
+  ];
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     gsap.set(name, { y: 0 });
 
     var tl = gsap.timeline();
@@ -79,12 +87,32 @@ export default function index() {
     });
   }, []);
 
+  const handleDownload = () => {
+    const pdfUrl = "/Sheharyar_Saeed_Resume.pdf";
+
+    // Create a link element
+    const link = document.createElement("a");
+    link.href = pdfUrl;
+    link.download = "Sheharyar_Saeed_Resume.pdf";
+
+    // Append the link to the body
+    document.body.appendChild(link);
+
+    // Trigger a click on the link to start the download
+    link.click();
+
+    // Remove the link from the body after the download
+    document.body.removeChild(link);
+
+    window.open("/Sheharyar_Saeed_Resume.pdf", "_blank");
+  };
+
   return (
     <section ref={section} className={styles.Hero}>
       <div ref={intro} style={{ zIndex: 3 }}>
         <nav>
           <div className={styles.logo}>
-            <Image src={Logo} width={46} height={46} />
+            <Image alt="blob" src={Logo} width={46} height={46} />
           </div>
 
           <div className={styles.nav}>
@@ -94,24 +122,39 @@ export default function index() {
 
         <ul className={styles.SocialIcons}>
           <li className={styles.Icon}>
-            <StickyIcon icon={<BiLogoLinkedin />} />
+            <StickyIcon
+              url={"https://www.linkedin.com/in/sheharyarsaeed932/"}
+              icon={<BiLogoLinkedin />}
+            />
           </li>
           <li className={styles.Icon}>
-            <StickyIcon icon={<BiLogoGithub />} />
+            <StickyIcon
+              url={"https://github.com/sherryjutt932"}
+              icon={<BiLogoGithub />}
+            />
           </li>
           <li className={styles.Icon}>
-            <StickyIcon icon={<BiLogoCodepen />} />
+            <StickyIcon
+              url={"https://codepen.io/sherryjutt932"}
+              icon={<BiLogoCodepen />}
+            />
           </li>
           <li className={styles.Icon}>
-            <StickyIcon icon={<BiLogoInstagram />} />
+            <StickyIcon
+              url={"https://www.instagram.com/sherry_jutt42/"}
+              icon={<BiLogoInstagram />}
+            />
           </li>
           <li className={styles.Icon}>
-            <StickyIcon icon={<BiLogoFacebook />} />
+            <StickyIcon
+              url={"https://www.facebook.com/profile.php?id=100009704040257"}
+              icon={<BiLogoFacebook />}
+            />
           </li>
         </ul>
 
         <div className={styles.resume}>
-          <button>
+          <button onClick={() => handleDownload()}>
             <span>
               <HiDownload />
             </span>

@@ -7,11 +7,14 @@
   .wrapper{
     position: relative;
     overflow: hidden;
-    a{
+    a,button{
       display: flex;
       text-decoration: none;
       color: var(--light1);
       font-size: 0.9rem;
+      background:none;
+      border: none;
+      cursor: pointer;
 
       &:nth-child(2){
         position: absolute;

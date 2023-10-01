@@ -1,6 +1,5 @@
 import React from "react";
 import App from "./App.jsx";
-import Head from "next/head.js";
 import favicon from "./favicon.ico"
 
 // const Hero = dynamic(() => import("@/components/Hero"), {});
@@ -10,13 +9,14 @@ export const metadata = {
   description: 'Sheharyar Saeed web developer portfolio in NextJS',
   keywords: 'HTML, CSS, JavaScript, NextJS',
   author: 'Sheharyar Saeed',
-};
+}
+ 
 
 export default function Home() {
   
   return (
     <main className="main">
-      <Head>
+      {/* <Head>
       <title>{metadata.title}</title>
         <meta name="description" content={metadata.description} />
         <meta name="keywords" content={metadata.keywords} />
@@ -25,7 +25,7 @@ export default function Home() {
           <link rel="apple-touch-icon" sizes="180x180" href = {favicon}/>
           <link rel="icon" type="image/png" sizes="32x32" href = {favicon}/>
           <link rel="icon" type="image/png" sizes="16x16" href = {favicon}/>
-      </Head>
+      </Head> */}
       <App/>
     </main>
   );

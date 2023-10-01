@@ -59,7 +59,7 @@
   list-style: none;
   flex-direction: column;
   justify-content: space-between;
-  color: #b7ab98;
+  color: var(--light1);
   z-index: 5;
   gap: var(--SPad);
   .Icon{
@@ -111,16 +111,19 @@
 
 .Name {
   font-family: var(--mainFont);
-  margin-top: calc(var(--BPad) * 2);
+  // margin-top: calc(var(--BPad) * 2);
   color: var(--dark2);
   color: var(--light1);
-  font-size: 8rem;
+  font-size: 10vw;
   letter-spacing: -0ch;
   cursor: default;
   user-select: none;
-  
+  height:80%;
+  display: flex;
+    justify-content: center;
+    align-items: center;
   .NameW {
-    height: fit-content;
+    height:fit-content;
     overflow: hidden;
     display: flex;
     justify-content: center;
@@ -137,6 +140,7 @@
   top: 1rem;
   right: 2rem;
   padding-top: var(--Pad);
+
   // display: flex;
   // flex-direction: row;
   // justify-content: space-between;
